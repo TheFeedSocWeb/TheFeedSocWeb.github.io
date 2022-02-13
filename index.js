@@ -13,11 +13,16 @@ menuItems.forEach(item => {
     item.addEventListener('click', () => {
         item.classList.add('active');
         if(item.id != 'notifications'){
-            document.querySelector('.notification-popup').
+            document.querySelector('.notifications-popup').
             style.display = 'none';
         } else{
-            document.querySelector('notification-popup'). 
+            document.querySelector('notifications-popup'). 
             style.display = 'block';
+            document.querySelector('#notifications . notification-count').style.display='none';
+            
         }
     })
 })
+
+// Messages
+
