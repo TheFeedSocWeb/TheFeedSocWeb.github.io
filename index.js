@@ -1,6 +1,9 @@
 //SideBar
 const menuItems = document.querySelectorAll('.menu-item');
 
+const messagesNotification = document.querySelector('#messages-notification');
+const messages = document.querySelector('.messages');
+
 
 //remove active class from all menu items
 const changeActiveItem = () => {
@@ -16,8 +19,7 @@ menuItems.forEach(item => {
             document.querySelector('.notifications-popup').
             style.display = 'none';
         } else{
-            document.querySelector('notifications-popup'). 
-            style.display = 'block';
+            document.querySelector('notifications-popup').style.display = 'grid';
             document.querySelector('#notifications . notification-count').style.display='none';
             
         }
@@ -26,3 +28,10 @@ menuItems.forEach(item => {
 
 // Messages
 
+messagesNotification.addEventListener('click', () => {
+    messages.style.boxShadow = '0 0 1rem var(--color-primary)';
+    messagesNotification.querySelector('.notification-count').style.display = 'none';
+    setTimeout(() => {
+        messages.style.boxShadow = 'none';
+    }, 2000);
+})
