@@ -12,5 +12,12 @@ const changeActiveItem = () => {
 menuItems.forEach(item => {
     item.addEventListener('click', () => {
         item.classList.add('active');
+        if(item.id != 'notifications'){
+            document.querySelector('.notification-popup').
+            style.display = 'none';
+        } else{
+            document.querySelector('notification-popup'). 
+            style.display = 'block';
+        }
     })
 })
